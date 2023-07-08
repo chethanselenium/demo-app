@@ -5,7 +5,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                printMessage()
+                printMessage('Build')
+            }
+        }
+        stage('Test') {
+            steps {
+                printMessage('Test')
+            }
+        }
+        stage('Deplo') {
+            steps {
+                printMessage('Deplo')
             }
         }
     }
