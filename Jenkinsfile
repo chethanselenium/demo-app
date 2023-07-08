@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    def utils = load './printMsg.groovy'
+                    def utils = load "${WORKSPACE}/printMsg.groovy"
                     script {
                         utils.call()
                     }
