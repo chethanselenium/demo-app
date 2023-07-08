@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-        script {
-            def utils = load 'printMsg.groovy'
-            script {
-                utils.call()
+                script {
+                    def utils = load './printMsg.groovy'
+                    script {
+                        utils.call()
+                    }
+                }
             }
-        }
-    }
         }
         stage('Test') {
             steps {
