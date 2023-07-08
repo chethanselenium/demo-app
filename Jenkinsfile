@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sta = 'Build'
+                sta = 'Test'
                 printMessage(sta)
             }
         }
