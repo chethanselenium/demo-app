@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Build"
+                def utils = load './printMsg.groovy'
+                utils.call()
             }
         }
         stage('Test') {
