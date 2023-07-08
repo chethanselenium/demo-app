@@ -5,20 +5,26 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sta = 'Build'
-                printMessage(sta)
+                script {
+                    def sta = 'Build'
+                    printMessage(sta)
+                }
             }
         }
         stage('Test') {
             steps {
-                sta = 'Test'
-                printMessage(sta)
+                script {
+                    def sta = 'Test'
+                    printMessage(sta)
+                }
             }
         }
-        stage('Deplo') {
+        stage('Deploy') {
             steps {
-                sta = 'Deplo'
-                printMessage(sta)
+                script {
+                    def sta = 'Deploy'
+                    printMessage(sta)
+                }
             }
         }
     }
