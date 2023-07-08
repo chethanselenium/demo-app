@@ -5,17 +5,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                printMessage('Build')
+                sta = 'Build'
+                printMessage(sta)
             }
         }
         stage('Test') {
             steps {
-                printMessage('Test')
+                sta = 'Build'
+                printMessage(sta)
             }
         }
         stage('Deplo') {
             steps {
-                printMessage('Deplo')
+                sta = 'Deplo'
+                printMessage(sta)
             }
         }
     }
