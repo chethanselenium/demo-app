@@ -1,3 +1,6 @@
 def call(String stage) {
-  echo "Hello world ${stage}"
+  sh '''
+   echo "Hello world ${stage}"
+   echo "last line
+   '''
 }
