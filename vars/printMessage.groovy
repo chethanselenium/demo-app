@@ -1,3 +1,4 @@
 def call(String stage) {
-  echo "Hello world ${stage}"
+  a='Hello world'
+  echo "${a} ${stage}"
 }

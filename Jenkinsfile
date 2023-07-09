@@ -30,7 +30,7 @@ pipeline {
         stage('Example') {
             steps {
                 script {
-                    sh 'echo "Hello, World!"'
+                    echo "Hello, World!"
                 }
             }
         }
