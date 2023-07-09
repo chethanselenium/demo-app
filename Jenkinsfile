@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    def sta = 'Build'
+                    sta = 'Build'
                     printMessage(sta)
                 }
             }
@@ -14,7 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    def sta = 'Test'
+                    sta = 'Test'
                     printMessage(sta)
                 }
             }
@@ -22,7 +22,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    def sta = 'Deploy'
+                    sta = 'Deploy'
                     printMessage(sta)
                 }
             }
