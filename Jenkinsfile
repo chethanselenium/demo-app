@@ -31,6 +31,7 @@ pipeline {
             steps {
                 script {
                     echo "Hello, World!"
+                    genReports(env.STAGE_NAME,env.JOB_NAME,env.BUILD_NUMBER,env.BUILD_URL,env.STAGE_NAME)
                 }
             }
         }
