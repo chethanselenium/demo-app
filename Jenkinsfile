@@ -2,6 +2,9 @@
 
 pipeline {
     agent any
+    environment {
+        ROOT_DIR = "/DEMO" 
+    }
     stages {
         stage('Build') {
             steps {
@@ -31,7 +34,7 @@ pipeline {
             steps {
                 script {
                     echo "Hello, World!"
-                    genReports(env.STAGE_NAME,env.JOB_NAME,env.BUILD_NUMBER,env.BUILD_URL,env.STAGE_NAME)
+                    genReports(env.STAGE_NAME,env.JOB_NAME,env.BUILD_NUMBER,env.BUILD_URL,ROOT_DIR)
                 }
             }
         }
