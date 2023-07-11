@@ -1,16 +1,27 @@
-@Library("my-shared-library") _
-
 pipeline {
     agent any
     environment {
         ROOT_DIR = "/DEMO" 
     }
     stages {
+        stage('check out') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('load shared lib') {
+            steps {
+                script {
+                    rootDir = pwd()
+                    sharedLib = load "${rootDir}/shared-lib.groovy"
+                }
+            }
+        }
         stage('Build') {
             steps {
                 script {
                     sta = 'Build'
-                    printMessage(sta)
+                    sharedLib.printMessage(sta)
                 }
             }
         }
@@ -18,7 +29,7 @@ pipeline {
             steps {
                 script {
                     sta = 'Test'
-                    printMessage(sta)
+                    sharedLib.printMessage(sta)
                 }
             }
         }
@@ -26,7 +37,7 @@ pipeline {
             steps {
                 script {
                     sta = 'Deploy'
-                    printMessage(sta)
+                    sharedLib.printMessage(sta)
                 }
             }
         }
@@ -34,7 +45,7 @@ pipeline {
             steps {
                 script {
                     echo "Hello, World!"
-                    genReports(env.STAGE_NAME,env.JOB_NAME,env.BUILD_NUMBER,env.BUILD_URL,ROOT_DIR)
+                    sharedLib.genReports(env.STAGE_NAME,env.JOB_NAME,env.BUILD_NUMBER,env.BUILD_URL,ROOT_DIR)
                 }
             }
         }
