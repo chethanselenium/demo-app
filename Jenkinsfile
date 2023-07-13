@@ -20,6 +20,14 @@ pipeline {
         stage('Build') {
             steps {
                 script {
+                    sh '''
+                        echo "with brackets"
+                        echo ${ROOT_DIR}
+
+                        echo "without brackets"
+                        echo ${ROOT_DIR}
+
+                    '''
                     sta = 'Build'
                     sharedLib.printMessage(sta)
                 }
