@@ -49,5 +49,19 @@ pipeline {
                 }
             }
         }
+        stage('Loop Stage') {
+            steps {
+                script {
+                    items = ['hai','hello']
+                    for (item in items) {
+                        stage("Iteration ${item}") {
+                            steps {
+                                echo "${item}!"
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
