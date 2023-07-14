@@ -10,7 +10,9 @@ pipeline {
                     for (int i = 1; i <= numberOfTimes; i++) {
                         stage("Iteration ${i}") {
                             steps {
-                                echo "Hello from Iteration ${i}!"
+                                script {
+                                    echo "Hello from Iteration ${i}!"
+                                }
                             }
                         }
                     }
