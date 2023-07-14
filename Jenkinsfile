@@ -56,7 +56,9 @@ pipeline {
                     for (item in items) {
                         stage("Iteration ${item}") {
                             steps {
-                                echo "${item}!"
+                                script {
+                                    echo "${item}!"
+                                }
                             }
                         }
                     }
