@@ -44,7 +44,7 @@ pipeline {
         stage('Example') {
             steps {
                 script {
-                    echo "Hello, World!"
+                    echo "Hello, World! Git"
                     sharedLib.genReports(env.STAGE_NAME,env.JOB_NAME,env.BUILD_NUMBER,env.BUILD_URL,ROOT_DIR)
                 }
             }
