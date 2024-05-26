@@ -29,7 +29,6 @@ pipeline {
             steps {
                 script {
                     sta = 'Test'
-                    sharedLib.printMessage(sta)
                 }
             }
         }
